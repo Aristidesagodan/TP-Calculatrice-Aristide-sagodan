@@ -147,17 +147,12 @@ eval("2+3*4"); // retourne 14
 eval("10/2");  // retourne 5
 
 
-Dans ta calculatrice :
+Dans la calculatrice :
 Quand l’utilisateur tape 12+7*2, c’est une chaîne 
 de caractères (du texte).
 → eval(currentInput) permet de transformer "12+7*2" 
 en un vrai calcul JavaScript et d’obtenir 26.
 
-⚠️ Attention : eval() est pratique pour un petit 
-projet, mais il peut être dangereux si quelqu’un 
-tape du code malveillant à exécuter. Ici ce n’est 
-pas grave, car tu contrôles l’interface 
-(on ne peut taper que des chiffres et opérateurs).
 
 2. try
 
@@ -186,27 +181,13 @@ try {
 }
 
 
-👉 Ici, comme "2++3" n’est pas un calcul valide, eval() 
+ Ici, comme "2++3" n’est pas un calcul valide, eval() 
 lance une erreur.
 Le catch récupère l’erreur et affiche un message au lieu 
 de bloquer le programme.
 
-Dans ta calculatrice
-
-Dans ton code, tu as ceci :
-
-try {
-  result = eval(currentInput).toString(); // on tente de calculer
-  calculationDisplay.textContent = currentInput + ' =';
-  resultDisplay.textContent = result;
-  currentInput = result;
-  justCalculated = true;
-} catch (e) {
-  resultDisplay.textContent = 'Erreur'; // si le calcul est impossible
-}
 
 
-👉 Explication :
 
 try : on tente de calculer avec eval(currentInput).
 
@@ -221,7 +202,7 @@ Sans try/catch → ton programme crasherait.
 Avec try/catch → l’erreur est attrapée et on affiche
  "Erreur" dans la calculatrice.
 
-✅ En résumé pour ton projet :
+En résumé 
 
 eval → transforme le texte tapé par l’utilisateur 
 en vrai calcul JavaScript.
